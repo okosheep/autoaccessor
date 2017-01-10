@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Java Auto Accessor Tool
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: info.okoshi.autoaccessor.core
+Bundle-Vendor: Hiroomi Okoshi
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Import-Package: org.osgi.framework
