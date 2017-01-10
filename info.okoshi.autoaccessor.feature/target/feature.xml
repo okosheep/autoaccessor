@@ -24,7 +24,7 @@
 -->
 <feature id="info.okoshi.autoaccessor.feature"
 	label="%featureName"
-	version="1.0.0.201701101143"
+	version="1.0.0.201701101149"
 	provider-name="%providerName">
 
 	<description>
@@ -38,7 +38,7 @@
 	<plugin id="info.okoshi.autoaccessor.core"
 		download-size="18"
 		install-size="33"
-		version="1.0.0.201701101143"
+		version="1.0.0.201701101149"
 		unpack="false" />
 
 </feature>
