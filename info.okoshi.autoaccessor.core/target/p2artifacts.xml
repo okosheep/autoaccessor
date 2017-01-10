@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <?artifactRepository version='1.1.0'?>
 <artifacts size='1'>
-  <artifact classifier='osgi.bundle' id='info.okoshi.autoaccessor.core' version='1.0.0.201701101149'>
+  <artifact classifier='osgi.bundle' id='info.okoshi.autoaccessor.core' version='1.0.0.201701101159'>
     <properties size='5'>
       <property name='artifact.size' value='19255'/>
       <property name='download.size' value='19255'/>
