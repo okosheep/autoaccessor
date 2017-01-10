@@ -1,4 +1,105 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+  MIT License
+
+  Copyright (c) 2017 okosheep
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to deal
+  in the Software without restriction, including without limitation the rights
+  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+  copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in all
+  copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+  SOFTWARE.
+-->
 <?eclipse version="3.4"?>
 <plugin>
+  <extension
+       point="org.eclipse.ui.commands">
+    <category
+          id="info.okoshi.autoaccessor.core.commands.category"
+          name="Auto Accessor Tool Category">
+    </category>
+    <command
+          categoryId="info.okoshi.autoaccessor.core.commands.category"
+          id="info.okoshi.autoaccessor.core.commands.autoAccessorCommand"
+          name="Getter/Setter">
+    </command>
+      <command
+          categoryId="info.okoshi.autoaccessor.core.commands.category"
+          id="info.okoshi.autoaccessor.core.commands.autoGetterCommand"
+          name="Getter">
+    </command>
+      <command
+          categoryId="info.okoshi.autoaccessor.core.commands.category"
+          id="info.okoshi.autoaccessor.core.commands.autoSetterCommand"
+          name="Setter">
+    </command>
+  </extension>
+  <extension
+       point="org.eclipse.ui.handlers">
+    <handler
+          class="info.okoshi.autoaccessor.core.handlers.SetterGetterHandler"
+          commandId="info.okoshi.autoaccessor.core.commands.autoAccessorCommand">
+    </handler>
+    <handler
+          class="info.okoshi.autoaccessor.core.handlers.GetterHandler"
+          commandId="info.okoshi.autoaccessor.core.commands.autoGetterCommand">
+    </handler>
+    <handler
+          class="info.okoshi.autoaccessor.core.handlers.SetterHandler"
+          commandId="info.okoshi.autoaccessor.core.commands.autoSetterCommand">
+    </handler>
+ </extension>
+ <extension
+       point="org.eclipse.ui.bindings">
+    <key commandId="info.okoshi.autoaccessor.core.commands.autoAccessorCommand"
+          contextId="org.eclipse.ui.contexts.window"
+          schemeId="org.eclipse.ui.defaultAcceleratorConfiguration">
+    </key>
+    <key commandId="info.okoshi.autoaccessor.core.commands.autoGetterCommand"
+          contextId="org.eclipse.ui.contexts.window"
+          schemeId="org.eclipse.ui.defaultAcceleratorConfiguration">
+    </key>
+    <key commandId="info.okoshi.autoaccessor.core.commands.autoSetterCommand"
+          contextId="org.eclipse.ui.contexts.window"
+          schemeId="org.eclipse.ui.defaultAcceleratorConfiguration">
+    </key>
+ </extension>
+ <extension
+       point="org.eclipse.ui.menus">
+    <menuContribution
+          locationURI="popup:#CompilationUnitEditorContext?after=additions">
+       <menu
+             id="info.okoshi.autoaccessor.core.menus.autoAccessorMenu"
+             label="Generate Accessors"
+             mnemonic="M">
+          <command
+                commandId="info.okoshi.autoaccessor.core.commands.autoAccessorCommand"
+                id="info.okoshi.autoaccessor.core.menus.autoAccessorMenu"
+                mnemonic="A">
+          </command>
+          <command
+                commandId="info.okoshi.autoaccessor.core.commands.autoGetterCommand"
+                id="info.okoshi.autoaccessor.core.menus.autoAccessorMenu"
+                mnemonic="G">
+          </command>
+           <command
+                commandId="info.okoshi.autoaccessor.core.commands.autoSetterCommand"
+                id="info.okoshi.autoaccessor.core.menus.autoAccessorMenu"
+                mnemonic="S">
+          </command>
+       </menu>
+    </menuContribution>
+ </extension>
 </plugin>

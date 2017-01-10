@@ -2,7 +2,17 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Java Auto Accessor Tool
 Bundle-Version: 1.0.0.qualifier
-Bundle-SymbolicName: info.okoshi.autoaccessor.core
+Bundle-SymbolicName: info.okoshi.autoaccessor.core;singleton:=true
 Bundle-Vendor: Hiroomi Okoshi
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-Activator: info.okoshi.Activator
 Import-Package: org.osgi.framework
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.core.resources,
+ org.eclipse.ui,
+ org.eclipse.ui.editors,
+ org.eclipse.ui.ide,
+ org.eclipse.jdt.core,
+ org.eclipse.jface.text,
+ org.junit,
+ org.apache.commons.lang3
