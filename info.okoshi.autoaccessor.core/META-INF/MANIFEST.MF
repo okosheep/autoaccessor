@@ -4,7 +4,7 @@ Bundle-Name: Java Auto Accessor Tool
 Bundle-Version: 1.0.0.qualifier
 Bundle-SymbolicName: info.okoshi.autoaccessor.core;singleton:=true
 Bundle-Vendor: Hiroomi Okoshi
-Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-Activator: info.okoshi.Activator
 Import-Package: org.osgi.framework
 Require-Bundle: org.eclipse.core.runtime,
