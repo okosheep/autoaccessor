@@ -40,8 +40,14 @@ public class ModifiersInfo {
   /** Abstract field */
   private boolean abstractValue;
 
+  /** Annotation field */
+  private boolean annotationValue;
+
   /** Final field */
   private boolean finalValue;
+
+  /** Native field */
+  private boolean nativeValue;
 
   /** Package private field */
   private boolean packagePrivateValue;
@@ -58,6 +64,9 @@ public class ModifiersInfo {
   /** Static field */
   private boolean staticValue;
 
+  /** Synchronized field */
+  private boolean synchronizedValue;
+
   /** Volatile field */
   private boolean volatileValue;
 
@@ -72,21 +81,16 @@ public class ModifiersInfo {
       if (extendedModifier.isModifier()) {
         final Modifier modifier = (Modifier) modifierObject;
 
-        if (modifier.isStatic()) {
-          staticValue = true;
-        } else if (modifier.isFinal()) {
-          finalValue = true;
-        } else if (modifier.isPrivate()) {
-          privateValue = true;
-        } else if (modifier.isProtected()) {
-          protectedValue = true;
-        } else if (modifier.isPublic()) {
-          publicValue = true;
-        } else if (modifier.isVolatile()) {
-          volatileValue = true;
-        } else if (modifier.isAbstract()) {
-          abstractValue = true;
-        }
+        abstractValue = modifier.isAbstract();
+        annotationValue = modifier.isAnnotation();
+        finalValue = modifier.isFinal();
+        nativeValue = modifier.isNative();
+        privateValue = modifier.isPrivate();
+        protectedValue = modifier.isProtected();
+        publicValue = modifier.isPublic();
+        staticValue = modifier.isStatic();
+        synchronizedValue = modifier.isSynchronized();
+        volatileValue = modifier.isVolatile();
       }
     }
 
@@ -100,8 +104,16 @@ public class ModifiersInfo {
     return abstractValue;
   }
 
+  public boolean isAnnotationValue() {
+    return annotationValue;
+  }
+
   public boolean isFinal() {
     return finalValue;
+  }
+
+  public boolean isNatvieValue() {
+    return nativeValue;
   }
 
   public boolean isPackagePrivate() {
@@ -122,6 +134,10 @@ public class ModifiersInfo {
 
   public boolean isStatic() {
     return staticValue;
+  }
+
+  public boolean isSynchronizedValue() {
+    return synchronizedValue;
   }
 
   public boolean isVolatile() {

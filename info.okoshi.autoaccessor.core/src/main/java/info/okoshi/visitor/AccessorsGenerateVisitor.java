@@ -194,7 +194,7 @@ public class AccessorsGenerateVisitor extends ASTVisitor {
     String propertyName = getJavadoc(node);
     javadoc.tags().add(createJavadocTextLine(ast, propertyName + "を設定する。"));
     javadoc.tags().add(createJavadocTextLine(ast, ""));
-    javadoc.tags().add(createJavadocTextLine(ast, "@param", fieldName + " " + propertyName));
+    javadoc.tags().add(createJavadocTextLine(ast, "@param", fieldName + propertyName));
     return javadoc;
   }
 
